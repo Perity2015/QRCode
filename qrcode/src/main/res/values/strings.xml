@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">QRCode</string>
+    <string name="qrcode_notice">将二维码/条码放到框内</string>
+    <string name="qrcode_scan_error">扫描失败</string>
+</resources>
