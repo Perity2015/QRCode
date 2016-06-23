@@ -37,10 +37,10 @@ public class CameraManager {
 
     private static final String TAG = CameraManager.class.getSimpleName();
 
-    private static final int MIN_FRAME_WIDTH = 360;
-    private static final int MIN_FRAME_HEIGHT = 360;
-    private static final int MAX_FRAME_WIDTH = 480;
-    private static final int MAX_FRAME_HEIGHT = 480;
+    private static final int MIN_FRAME_WIDTH = 200;
+    private static final int MIN_FRAME_HEIGHT = 200;
+    private static final int MAX_FRAME_WIDTH = 360;
+    private static final int MAX_FRAME_HEIGHT = 360;
 
     private static CameraManager cameraManager;
 
@@ -223,22 +223,24 @@ public class CameraManager {
             if (camera == null) {
                 return null;
             }
-//            int width = screenResolution.x * 3 / 4;
-//            if (width < MIN_FRAME_WIDTH) {
-//                width = MIN_FRAME_WIDTH;
-//            } else if (width > MAX_FRAME_WIDTH) {
-//                width = MAX_FRAME_WIDTH;
-//            }
-//            int height = screenResolution.y * 3 / 4;
-//            if (height < MIN_FRAME_HEIGHT) {
-//                height = MIN_FRAME_HEIGHT;
-//            } else if (height > MAX_FRAME_HEIGHT) {
-//                height = MAX_FRAME_HEIGHT;
-//            }
+            int width = screenResolution.x/ 2;
+            if (width < MIN_FRAME_WIDTH) {
+                width = MIN_FRAME_WIDTH;
+            } else if (width > MAX_FRAME_WIDTH) {
+                width = MAX_FRAME_WIDTH;
+            }
+            int height = screenResolution.y / 2;
+            if (height < MIN_FRAME_HEIGHT) {
+                height = MIN_FRAME_HEIGHT;
+            } else if (height > MAX_FRAME_HEIGHT) {
+                height = MAX_FRAME_HEIGHT;
+            }
 
-            int width = screenResolution.x * 2 / 3;
-            int height = screenResolution.y * 2 / 3;
-            width = height = Math.max(width, height);
+//            int width = screenResolution.x/ 2;
+//            int height = screenResolution.y / 2;
+//            int min = Math.min(width,height);
+//            width = min;
+//            height = min;
 
             int leftOffset = (screenResolution.x - width) / 2;
             int topOffset = (screenResolution.y - height) / 2;
